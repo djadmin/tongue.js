@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Try tongue.js</title>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="bower_components/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="bower_components/codemirror/theme/monokai.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="bower_components/requirejs/require.js" data-main="config"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row  topbar">
+            <div class="col-md-4">
+                <a class="navbar-brand" href="#"><i class="fa fa-code fa-lg"></i>&nbsp;Try tongue.js</a>
+            </div>
+            <div class="col-md-8">
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#">Examples</a>
+                        </li>
+                        <li>
+                            <a href="#">Github</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    	<div class="row  top-buffer">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-md-5">
+	                    <div class="row  editor-wrapper">
+	                    	<textarea id="code" name="code"></textarea>
+	                    </div>
+	                    <div class="row">
+		                    <div class="options">
+		                    	<div class="checkbox  option">
+		                    		<label>
+		                    			<input type="checkbox" checked id="autorun"/>Auto Execute
+		                    		</label>
+		                    	</div>
+		                    	<div class="checkbox  option">
+		                    		<label>
+		                    			<input type="checkbox" checked id="theme"/>Dark Theme
+		                    		</label>
+		                    	</div>
+		                    </div>
+		                    <div class="action">
+		                    	<button id="execute" name="run">Execute</button>
+		                    </div>
+	                    </div>
+	                </div>
+	                <div class="col-md-6  col-md-offset-1">
+	                	<div class="container-fluid  logger" id="logger">
+	                		<!-- <span class="log">
+	                			<i class="fa fa-terminal"></i>
+	                			<span class="log-msg">hello</span>
+	                		</span> -->
+	                	</div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        <footer class="footer">
+            <div class="container">
+                Handcrafted with <i class="fa fa-heart fa-lg"></i> by <a href="https://twitter.com/dheerajhere" target="_blank"><span class="logo">Dheeraj Joshi</span></a>
+            </div>
+        </footer>
+    </div>
+<!-- Template -->
+<script type="text/template" id="sample-code-hi">
+// #1 सावधान
+काम गर ()
+{
+	मानलो ल = "सह";
+	दिलासा.लघुगणक(ल)
+}
+गर();
+</script>
+</body>
+
+</html>
