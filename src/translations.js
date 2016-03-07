@@ -1,7 +1,7 @@
-var Translations = (function () {
+var TongueTranslations = (function () {
 	'use strict';
 
-	var map = {}
+	var map = {};
 
 	map['en'] = {};
 
@@ -13,7 +13,10 @@ var Translations = (function () {
 	  "var": 'मानलो',
 	  "if": 'अगर',
 	  "console": 'दिलासा',
-	  "log": 'लघुगणक'
+	  "log": 'लघुगणक',
+	  "new": 'नया',
+	  "for": 'चलाओ',
+	  "length": 'लंबाई'
 	};
 
 	return {

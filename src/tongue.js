@@ -2,7 +2,7 @@
  *	Tongue.js, copyright (c) by Dheeraj Joshi
  *	Distributed under an MIT license
  *
- *	It Helps in writing javascript code in any local language.
+ *	It Helps in transforming javascript code written in local languages.
  *	Please feel free to contribute to this repository.
  */
 (function (root, factory) {
@@ -26,7 +26,7 @@
 		targetCode,
 		keyDiff;
 
-	var translations = Translations.map;
+	var translations = TongueTranslations && TongueTranslations.map, inverseMap = {};
 
 	// Helpers
 	function invert(obj) {
@@ -43,6 +43,11 @@
 		return str.substring(0, start) + substitute + str.substring(end);
 	};
 
+	// Generate Reverse Mapping
+	for (var loc in translations) {
+		inverseMap[loc] = invert(translations[loc]);
+	}
+
 	// Parser
 	function parse(token) {
 		var str = token.value,
@@ -52,7 +57,7 @@
 			curlen,
 			rlen;
 
-			if (token.type !== 'Identifier') return;
+			if (token.type !== 'Identifier') { return };
 			if (replaceStr) {
 				targetCode = replaceRange(targetCode, trange.s,  trange.e, replaceStr);
 				curlen = range[1] - range[0], rlen = replaceStr.length;
@@ -70,11 +75,17 @@
 
 	// Transpiler
 	function transform(src, options) {
-		code = src, options = options;
-		locale = (options && options.locale) || 'en';
-		map = invert((options && options.map) || translations[locale]);
+		code = src;
+		options = options || {};
+		locale = options.locale || 'en';
+		map = options.map ? invert(options.map) : inverseMap[locale];
 
-		scan();
+		// start scanning
+		try {
+			scan();
+		} catch (e) {
+			return false;
+		}
 
 		return targetCode;
 	};
