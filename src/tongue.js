@@ -26,7 +26,33 @@
 		targetCode,
 		keyDiff;
 
-	var translations = TongueTranslations && TongueTranslations.map, inverseMap = {};
+	var translations = (function () {
+		'use strict';
+
+		var map = {};
+
+		map['en'] = {};
+
+		map['hi'] = {
+		  "alert": "सावधान",
+		  "show": "निर्देश",
+		  "true": "सही",
+		  "function": 'काम',
+		  "var": 'मानलो',
+		  "if": 'अगर',
+		  "console": 'दिलासा',
+		  "log": 'लघुगणक',
+		  "new": 'नया',
+		  "for": 'चलाओ',
+		  "length": 'लंबाई'
+		};
+
+		return {
+			map: map
+		};
+	})();
+
+	var transMap = translations.map, inverseMap = {};
 
 	// Helpers
 	function invert(obj) {
@@ -44,8 +70,8 @@
 	};
 
 	// Generate Reverse Mapping
-	for (var loc in translations) {
-		inverseMap[loc] = invert(translations[loc]);
+	for (var loc in transMap) {
+		inverseMap[loc] = invert(transMap[loc]);
 	}
 
 	// Parser
