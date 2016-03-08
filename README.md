@@ -33,6 +33,13 @@ returns
 "alert(1);"
 ```
 
+## tongue.js supports both AMD and CommonJS module styles.
 
-#### Currently Supported language - Hindi
+### Currently Supported language - Hindi
 
+## Contributions
+Your contributions are always welcome!
+
+## License
+Copyright (c) 2016 Dheeraj Joshi
+Licensed under the [MIT license](http://opensource.org/licenses/MIT).
