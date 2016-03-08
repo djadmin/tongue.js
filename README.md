@@ -21,6 +21,7 @@ tongue.transform(code, options);
 tongue.transform('मानलो ल = 1;', {locale: 'hi'};
 ```
 returns
+
 ```"var ल = 1;"```
 
 ### Another Example
@@ -28,7 +29,10 @@ returns
 tongue.transform('सावधान(1);', {locale: 'hi', map: {'alert': 'सावधान'}})};
 ```
 returns
-```"alert(1);"```
+```
+"alert(1);"
+```
 
-Currently Supported language - Hindi
+
+#### Currently Supported language - Hindi
 
