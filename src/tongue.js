@@ -10,7 +10,7 @@
 
 	// Universal Module Definition (UMD)
 	if (typeof define === 'function' && define.amd) {	// AMD
-        define(['esprima'], factory);
+        define('tongue', ['esprima'], factory);
     } else if (typeof exports === 'object') {	// CommonJS, Node
         module.exports = factory(require('esprima'));
     } else { // Browser globals (root is window)
@@ -118,6 +118,7 @@
 
 	return {
 		version: '0.1.0',
-		transform: transform
+		transform: transform,
+		map: transMap
 	};
 });
