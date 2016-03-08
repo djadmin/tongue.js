@@ -20,7 +20,15 @@ tongue.transform(code, options);
 ```js
 tongue.transform('मानलो ल = 1;', {locale: 'hi'};
 ```
-returns ```"var ल = 1;"```
+returns
+```"var ल = 1;"```
+
+### Another Example
+```js
+tongue.transform('सावधान(1);', {locale: 'hi', map: {'alert': 'सावधान'}})};
+```
+returns
+```"alert(1);"```
 
 Currently Supported language - Hindi
 
