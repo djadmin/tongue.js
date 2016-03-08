@@ -1,0 +1,108 @@
+body {
+	font-family: 'Lato', sans-serif;
+}
+.topbar {
+    left: 0;
+    top: 0;
+    right: 0;
+    background-color: #F4F4F4;
+    border-color: #e7e7e7;
+    height: 50px;
+}
+.topbar a {
+	color: rgb(118, 119, 119);
+}
+
+.top-buffer {
+	margin-top: 20px;
+}
+
+
+
+/*.obj-box-icon {
+    background-color: #69D7BE;
+    border-radius: 50%;
+    display: table;
+    height: 32px;
+    margin: 0 auto;
+    width: 32px;
+    margin-top: -24px;
+}
+
+.obj-box-icon span {
+    color: #fff;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.5em;
+}*/
+.header {
+    font-size: 16px;
+    color: 909090;
+    padding: 15px;
+}
+
+.header span {
+    color: #344F5D;
+    float: right;
+    cursor: pointer;
+}
+.editor-wrapper {
+
+}
+
+.main {
+	float: left;
+}
+
+.sidebar {
+	float: right;
+}
+
+.logger {
+	background-color: #01313f;
+    height: 300px;
+    overflow: scroll;
+}
+
+.log {
+	display: block;
+    padding: 5px;
+	/*border-top: 1px solid #C8D8E6;*/
+}
+.log:nth-child(1) {
+	border: none;
+}
+
+
+span.log-msg {
+	color: #fff;
+    padding: 15px;
+}
+
+.logger i:before {
+	color: #fff;
+}
+/*.log:before {
+    content: "\f120";
+    font-family: FontAwesome;
+    left:-5px;
+    position:absolute;
+    top:0;
+ }*/
+
+.footer {
+	text-align: center;
+    bottom: 0px;
+    position: absolute;
+}
+
+.footer i {
+	color: rgba(220,20,20,0.6);
+}
+
+/* CodeMirror related CSS */
+.CodeMirror {
+    border: 1 px solid black;
+    font - size: 13 px
+}
