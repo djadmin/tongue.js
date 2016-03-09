@@ -12,6 +12,14 @@
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.5.3"
   },
+  "homepage": "https://github.com/djadmin/tongue.js",
+  "bugs": {
+    "url": "https://github.com/djadmin/tongue.js/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djadmin/tongue.js.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
