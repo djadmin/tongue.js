@@ -34,9 +34,9 @@ returns
 "alert(1);"
 ```
 
-### tongue.js supports both AMD and CommonJS module styles.
+## Note
 
-### Currently Supported language - Hindi
+tongue.js supports both AMD and CommonJS module styles.
 
 ## Contributions
 Your contributions are always welcome!
