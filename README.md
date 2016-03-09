@@ -36,7 +36,7 @@ returns
 
 ### tongue.js supports both AMD and CommonJS module styles.
 
-#### Currently Supported language - Hindi
+### Currently Supported language - Hindi
 
 ## Contributions
 Your contributions are always welcome!
