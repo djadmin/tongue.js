@@ -16,6 +16,7 @@ tongue.transform(code, options);
 
 `map`: provide any custom translations for the locale
 
+`targetLocale`: target language code
 
 ## Example
 ```js

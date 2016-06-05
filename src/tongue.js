@@ -118,7 +118,11 @@
 		options = options || {};
 		locale = options.locale || 'en';
 		map = options.map ? invert(options.map) : inverseMap[locale];
-
+		// Support reverse transformation from English to other languages
+		// TODO: Add support for transforming from A to B where A, B is other than English
+		if (options.targetLocale) {
+			map = transMap[options.targetLocale];
+		}
 		// start scanning
 		try {
 			scan();
