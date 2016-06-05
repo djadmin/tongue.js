@@ -10,12 +10,12 @@
 
 	// Universal Module Definition (UMD)
 	if (typeof define === 'function' && define.amd) {	// AMD
-        define('tongue', ['esprima'], factory);
-    } else if (typeof exports === 'object') {	// CommonJS, Node
-        module.exports = factory(require('esprima'));
-    } else { // Browser globals (root is window)
-        root.tongue = factory(root.esprima);
-    }
+		define('tongue', ['esprima'], factory);
+	} else if (typeof exports === 'object') {	// CommonJS, Node
+		module.exports = factory(require('esprima'));
+	} else { // Browser globals (root is window)
+		root.tongue = factory(root.esprima);
+	}
 })(this, function (esprima) {
 	'use strict';
 
@@ -27,28 +27,41 @@
 		keyDiff;
 
 	var translations = (function () {
-		'use strict';
 
-		var map = {};
+		var MAP = {};
 
-		map['en'] = {};
+		MAP.en = {};
 
-		map['hi'] = {
-		  "alert": "सावधान",
-		  "show": "निर्देश",
-		  "true": "सही",
-		  "function": 'काम',
-		  "var": 'मानलो',
-		  "if": 'अगर',
-		  "console": 'दिलासा',
-		  "log": 'लघुगणक',
-		  "new": 'नया',
-		  "for": 'चलाओ',
-		  "length": 'लंबाई'
+		MAP.hi = {
+			"alert": "सावधान",
+			"show": "निर्देश",
+			"true": "सही",
+			"function": 'काम',
+			"var": 'मानलो',
+			"if": 'अगर',
+			"console": 'दिलासा',
+			"log": 'लघुगणक',
+			"new": 'नया',
+			"for": 'चलाओ',
+			"length": 'लंबाई'
+		};
+
+		MAP.cn = {
+			"alert": '警报',
+			"show": '显示',
+			"true": '真正',
+			"function": '功能',
+			"var": '承担',
+			"if": '如果',
+			"console": '终奌站',
+			"log": '打印',
+			"new": '新',
+			"for": '对于',
+			"length": '长度'
 		};
 
 		return {
-			map: map
+			map: MAP
 		};
 	})();
 
@@ -63,11 +76,11 @@
 			}
 		}
 		return inverted;
-	};
+	}
 
 	function replaceRange(str, start, end, substitute) {
 		return str.substring(0, start) + substitute + str.substring(end);
-	};
+	}
 
 	// Generate Reverse Mapping
 	for (var loc in transMap) {
@@ -83,10 +96,10 @@
 			curlen,
 			rlen;
 
-			if (token.type !== 'Identifier') { return };
+			if (token.type !== 'Identifier') { return; }
 			if (replaceStr) {
 				targetCode = replaceRange(targetCode, trange.s,  trange.e, replaceStr);
-				curlen = range[1] - range[0], rlen = replaceStr.length;
+				curlen = range[1] - range[0]; rlen = replaceStr.length;
 				keyDiff = keyDiff + (rlen - curlen);
 			}
 	}
@@ -114,7 +127,7 @@
 		}
 
 		return targetCode;
-	};
+	}
 
 	return {
 		version: '0.1.0',
