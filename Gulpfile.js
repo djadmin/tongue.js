@@ -6,7 +6,7 @@ var uglify = require('gulp-uglify');
 
 var jsFiles = 'src/*.js', jsDest = 'dist';
 
-gulp.task('build', function() {
+gulp.task('default', function() {
 	return gulp.src(jsFiles)
 		.pipe(concat('tongue.js'))
 		.pipe(gulp.dest(jsDest))
