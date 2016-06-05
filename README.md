@@ -1,4 +1,4 @@
-# tongue.js [![npm version](https://badge.fury.io/js/tongue.svg)](https://www.npmjs.com/package/tongue)
+# tongue.js [![npm version](https://badge.fury.io/js/tongue.svg)](https://www.npmjs.com/package/tongue) [![Build Status](https://travis-ci.org/djadmin/tongue.js.svg?branch=master)](https://travis-ci.org/djadmin/tongue.js)
 Helps writing JavaScript code in any supported spoken language.
 
 [tongue.js REPL](https://djadmin.in/tongue.js/)
