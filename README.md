@@ -1,4 +1,4 @@
-# tongue.js [![npm version](https://badge.fury.io/js/tongue.svg)](https://www.npmjs.com/package/tongue) 
+# tongue.js [![npm version](https://badge.fury.io/js/tongue.svg)](https://www.npmjs.com/package/tongue)
 Helps writing JavaScript code in any supported spoken language.
 
 [tongue.js REPL](https://djadmin.in/tongue.js/)
@@ -19,7 +19,7 @@ tongue.transform(code, options);
 
 ## Example
 ```js
-tongue.transform('मानलो ल = 1;', {locale: 'hi'};
+tongue.transform('मानलो ल = 1;', {locale: 'hi'});
 ```
 returns
 
@@ -27,7 +27,7 @@ returns
 
 ### Another Example
 ```js
-tongue.transform('सावधान(1);', {locale: 'hi', map: {'alert': 'सावधान'}})};
+tongue.transform('सावधान(1);', {locale: 'hi', map: {'alert': 'सावधान'}});
 ```
 returns
 ```
