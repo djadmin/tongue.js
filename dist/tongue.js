@@ -96,7 +96,8 @@
 			curlen,
 			rlen;
 
-			if (token.type !== 'Identifier') { return; }
+			// Keyword will only be present when doing reverse transformation
+			if (token.type !== 'Identifier' && token.type !== 'Keyword') { return; }
 			if (replaceStr) {
 				targetCode = replaceRange(targetCode, trange.s,  trange.e, replaceStr);
 				curlen = range[1] - range[0]; rlen = replaceStr.length;
@@ -118,7 +119,11 @@
 		options = options || {};
 		locale = options.locale || 'en';
 		map = options.map ? invert(options.map) : inverseMap[locale];
-
+		// Support reverse transformation from English to other languages
+		// TODO: Add support for transforming from A to B where A, B is other than English
+		if (options.targetLocale) {
+			map = transMap[options.targetLocale];
+		}
 		// start scanning
 		try {
 			scan();

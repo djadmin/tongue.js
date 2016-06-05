@@ -96,7 +96,8 @@
 			curlen,
 			rlen;
 
-			if (token.type !== 'Identifier') { return; }
+			// Keyword will only be present when doing reverse transformation
+			if (token.type !== 'Identifier' && token.type !== 'Keyword') { return; }
 			if (replaceStr) {
 				targetCode = replaceRange(targetCode, trange.s,  trange.e, replaceStr);
 				curlen = range[1] - range[0]; rlen = replaceStr.length;
