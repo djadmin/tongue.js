@@ -6,7 +6,7 @@ define([
 ], function (tongue, CodeMirror) {
 	'use strict';
 
-	var locale = window.locale = 'hi'; // CodeMirror looks for locale on window
+	var locale;
 
 	function initEditor() {
 		return CodeMirror.fromTextArea(document.getElementById("code"), {
@@ -38,6 +38,14 @@ define([
 		};
 		return dfn;
 	};
+
+	function setLocale(val) {
+		var code = editor.getValue();
+		var eng = tongue.transform(code, { locale: locale });
+		locale = window.locale = val || 'hi'; // CodeMirror looks for locale on window
+		var targetCode = tongue.transform(eng, { targetLocale: locale });
+		editor.setValue(targetCode.trim());
+	}
 
 	function setInitialValue() {
 		var elem = document.getElementById('sample-code-' + locale);
@@ -101,7 +109,17 @@ define([
 		document.getElementById('logClear').addEventListener('click', function () {
 			document.getElementById('logger').innerHTML = '';
 		})
+
+		// Set Locale
+		document.getElementById('setLocale').addEventListener('change', function () {
+			setLocale(this.value);
+
+
+		});
 	}
+
+	// Set default locale
+	locale = window.locale = 'hi';
 
 	var editor = initEditor();
 	window.editor = editor;
@@ -138,5 +156,5 @@ define([
 
     var clear = function () {
     	logger.innerHTML = "";
-    }
+    };
 })();
