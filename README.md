@@ -1,7 +1,7 @@
 # tongue.js [![npm version](https://badge.fury.io/js/tongue.svg)](https://www.npmjs.com/package/tongue) [![Build Status](https://travis-ci.org/djadmin/tongue.js.svg?branch=master)](https://travis-ci.org/djadmin/tongue.js)
-Helps writing JavaScript code in any supported spoken language.
+Helps writing multilingual JavaScript. Tongue.js transforms JavaScript written in any language to any target language.
 
-[tongue.js REPL](https://djadmin.in/tongue.js/)
+Try it out using [tongue.js REPL](https://djadmin.in/tongue.js/)
 ## Usage
 
 ```js
@@ -28,7 +28,7 @@ returns
 
 ### Another Example
 ```js
-tongue.transform('सावधान(1);', {locale: 'hi', map: {'alert': 'सावधान'}});
+tongue.transform('警报(1);', {locale: 'hi', map: {'alert': '警报'}});
 ```
 returns
 ```
