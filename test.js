@@ -9,7 +9,7 @@ describe('tongue', function() {
 	});
 
 	it('should transform custom map given for the locale', function () {
-		var res = tongue.transform('警报(1);', {locale: 'hi', map: {'alert': '警报'}});
+		var res = tongue.transform('警报(1);', {locale: 'cn', map: {'alert': '警报'}});
 		assert.equal(res, "alert(1);");
 		res = tongue.transform('मानलो ल = 1;', {locale: 'hi'});
 		assert.equal(res, "var ल = 1;");

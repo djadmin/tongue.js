@@ -28,7 +28,7 @@ returns
 
 ### Another Example
 ```js
-tongue.transform('警报(1);', {locale: 'hi', map: {'alert': '警报'}});
+tongue.transform('警报(1);', {locale: 'cn', map: {'alert': '警报'}});
 ```
 returns
 ```
