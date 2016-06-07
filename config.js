@@ -5,15 +5,15 @@
 	require.config({
 		packages: [{
 			name: "codemirror",
-			location: "bower_components/codemirror/",
+			location: "../bower_components/codemirror/",
 			main: "lib/codemirror"
 		}],
 		paths: {
-			esprima: 'bower_components/esprima/esprima',
-			tongue: 'dist/tongue'
+			esprima: '../bower_components/esprima/esprima',
+			tongue: '../dist/tongue'
 		},
 		shim: {
-			tongue: {
+		tongue: {
 				deps: ['esprima']
 			}
 		}
