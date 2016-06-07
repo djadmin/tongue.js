@@ -13,8 +13,7 @@ define([
 			lineNumbers: true,
 			styleActiveLine: true,
 			mode: 'javascript',
-			indentUnit: 4,
-			readOnly: true
+			indentUnit: 4
 		});
 	}
 
