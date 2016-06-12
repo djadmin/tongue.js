@@ -75,11 +75,13 @@ CodeMirror.defineMode("javascript", function(config, parserConfig) {
     }
 
     // Tongue support
-    var map = tongue.map[window.locale];
-    for (var attr in jsKeywords) {
-      if (map[attr]) jsKeywords[map[attr]] = jsKeywords[attr];
-      // Delete key if necessary
-    }
+    for (var lang in tongue.map) {
+      var map = tongue.map[lang];
+      for (var attr in jsKeywords) {
+        if (map[attr]) jsKeywords[map[attr]] = jsKeywords[attr];
+        // Delete key if necessary
+      }
+    };
 
     return jsKeywords;
   }();
