@@ -1,6 +1,6 @@
 {
   "name": "tongue",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Helps writing JavaScript code in any supported language",
   "main": "dist/tongue.js",
   "dependencies": {
