@@ -1,22 +1,22 @@
 /*
- *	Tongue.js, copyright (c) by Dheeraj Joshi
- *	Distributed under an MIT license
+ *  Tongue.js, copyright (c) by Dheeraj Joshi
+ *  Distributed under an MIT license
  *
- *	It Helps in transforming javascript code written in local languages.
- *	Please feel free to contribute to this repository.
+ *  It Helps in transforming javascript code written in local languages.
+ *  Please feel free to contribute to this repository.
  */
-(function (root, factory) {
+(function(root, factory) {
 	'use strict';
 
 	// Universal Module Definition (UMD)
-	if (typeof define === 'function' && define.amd) {	// AMD
+	if (typeof define === 'function' && define.amd) { // AMD
 		define('tongue', ['esprima'], factory);
-	} else if (typeof exports === 'object') {	// CommonJS, Node
+	} else if (typeof exports === 'object') { // CommonJS, Node
 		module.exports = factory(require('esprima'));
 	} else { // Browser globals (root is window)
 		root.tongue = factory(root.esprima);
 	}
-})(this, function (esprima) {
+})(this, function(esprima) {
 	'use strict';
 
 	var code,
@@ -26,7 +26,7 @@
 		targetCode,
 		keyDiff;
 
-	var translations = (function () {
+	var translations = (function() {
 
 		var MAP = {};
 
@@ -116,12 +116,55 @@
 			"log": "印"
 		};
 
+		MAP.pl = {
+			"break": "złam",
+			"case": "przypadek",
+			"catch": "złap",
+			"class": "klasa",
+			"const": "stała",
+			"continue": "kontynuuj",
+			"debugger": "odrobaczacz",
+			"default": "domyślnie",
+			"delete": "usuń",
+			"do": "zrób",
+			"else": "inaczej",
+			"export": "eksportuj",
+			"extends": "rozszerz",
+			"finally": "w końcu",
+			"for": "dla",
+			"function": "funkcja",
+			"if": "jeżeli",
+			"import": "importuj",
+			"in": "w",
+			"instanceof": "instancja",
+			"new": "nowy",
+			"return": "zwróć",
+			"super": "super",
+			"switch": "przełącznik",
+			"this": "to",
+			"throw": "rzuć",
+			"try": "spróbuj",
+			"typeof": "typ",
+			"var": "zmienna",
+			"void": "otchłań",
+			"while": "dopóki",
+			"with": "z",
+			"yield": "dostarcz",
+			"alert": "alarm",
+			"true": "prawda",
+			"false": "fałsz",
+			"length": "długość",
+			"console": "konsola",
+			"log": "loguj"
+		};
+
 		return {
 			map: MAP
 		};
 	})();
 
-	var transMap = translations.map, inverseMap = {};
+	var transMap = translations.map,
+		inverseMap = {};
 
 	// Helpers
 	function invert(obj) {
@@ -148,17 +191,20 @@
 		var str = token.value,
 			replaceStr = map[str],
 			range = token.range,
-			trange = {s: range[0] + keyDiff, e: range[1] + keyDiff},
+			trange = { s: range[0] + keyDiff, e: range[1] + keyDiff },
 			curlen,
 			rlen;
 
-			// Keyword will only be present when doing reverse transformation
-			if (token.type !== 'Identifier' && token.type !== 'Keyword') { return; }
-			if (replaceStr) {
-				targetCode = replaceRange(targetCode, trange.s,  trange.e, replaceStr);
-				curlen = range[1] - range[0]; rlen = replaceStr.length;
-				keyDiff = keyDiff + (rlen - curlen);
-			}
+		// Keyword will only be present when doing reverse transformation
+		if (token.type !== 'Identifier' && token.type !== 'Keyword') {
+			return;
+		}
+		if (replaceStr) {
+			targetCode = replaceRange(targetCode, trange.s, trange.e, replaceStr);
+			curlen = range[1] - range[0];
+			rlen = replaceStr.length;
+			keyDiff = keyDiff + (rlen - curlen);
+		}
 	}
 
 	// Tokenizer
